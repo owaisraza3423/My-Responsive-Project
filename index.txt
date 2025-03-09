@@ -307,6 +307,4 @@ animation: my 2s alternate ease-in-out forwards;
     .button{
         padding: 20px;
     }
-  }
-  
-  
+itdi
