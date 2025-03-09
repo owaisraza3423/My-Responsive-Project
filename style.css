@@ -1,7 +1,10 @@
+/* Reset */
 * {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
+
 body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: #f2f2f2;
@@ -9,10 +12,10 @@ body {
 
 .head {
     color: #2e3b35;
-    animation: my2 ease-in-out 2s forwards;
+    animation: fadeIn ease-in-out 2s forwards;
 }
 
-@keyframes my2 {
+@keyframes fadeIn {
     0% { opacity: 0; }
     100% { opacity: 1; }
 }
@@ -26,175 +29,105 @@ body {
     border-radius: 20px;
     margin: 5px;
     flex-wrap: wrap;
-    background: linear-gradient(to bottom right, #ebf2f2, #b8ccc9); /* Light gradient */
+    background: linear-gradient(to bottom right, #ebf2f2, #b8ccc9);
 }
-
 
 .navbar {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    gap: 30px;
+    gap: 20px;
     list-style: none;
     flex-wrap: wrap;
-    animation: my3 ease-in-out 1s forwards alternate;
-}
-
-@keyframes my3 {
-    0% { transform: translateY(-100px); opacity: 0; }
-    100% { transform: translateY(0); opacity: 1; }
+    text-align: center;
 }
 
 .navbar a {
     color: #2e3b35;
     text-decoration: none;
     font-size: 16px;
+    transition: color 0.3s ease;
 }
 
-.header-container {
-    padding: 40px;
-}
-
-.button {
-    padding: 5px;
-}
-
-button {
-    padding: 2px;
-    border-radius: 10px;
+.navbar a:hover {
+    color: #65b08c;
 }
 
 .paragraph {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     align-items: center;
-    padding: 50px;
+    padding: 30px;
     margin: 20px;
-    background: linear-gradient(to bottom right, #8ebcb6, #b8ccc9); /* Updated Gradient */
-    border-radius: 20px;
-    animation: my 2s alternate ease-in-out forwards;
-}
-
-@keyframes my {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
-}
-
-.text {
-    padding: 20px;
-    font-size: 30px;
-}
-
-.text-1 {
-    padding: 20px;
-    font-size: 20px;
-}
-
-.button-2 {
-    padding: 20px;
-}
-
-.button-2 button {
-    height: 50px;
-    width: 150px;
-    border-radius: 20px;
-}
-
-.second-container {
-    display: flex;
-    gap: 30px;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    padding: 5px;
-}
-
-.col1 {
-    display: flex;
-    padding: 20px;
-    color: #2e3b35; /* Dark text for contrast */
+    background: linear-gradient(to bottom right, #8ebcb6, #b8ccc9);
     border-radius: 20px;
     text-align: center;
 }
 
-.t {
-    font-size: 30px;
-}
-button {
-    gap: 20px;
-    border-radius: 25px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-    border: none;
+.text {
+    padding: 10px;
+    font-size: 28px;
 }
 
-/* Primary Button */
-.button-2 button:first-child {
-    background: linear-gradient(to right, #65b08c, #8ebcb6); /* Green Gradient */
-    color: #2e3b35;
+.text-1 {
+    padding: 10px;
+    font-size: 18px;
 }
 
-/* Secondary Button */
-.button-2 button:last-child {
-    background: transparent;
-    border: 2px solid #65b08c; /* Green Border */
-    color: #2e3b35; /* Dark Text */
+.button-2 {
+    padding: 15px;
 }
 
-/* Hover Effects */
-.button-2 button:first-child:hover {
-    background: linear-gradient(to right, #8ebcb6, #b8ccc9);
+.button-2 button {
+    height: 45px;
+    width: 140px;
+    border-radius: 15px;
+    transition: transform 0.3s;
+}
+
+.button-2 button:hover {
     transform: scale(1.05);
 }
 
-.button-2 button:last-child:hover {
-    background: #65b08c;
-    color: #8ebcb6;
-    transform: scale(1.05);
-}
-
-#other{
+.second-container {
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-.content{
-    padding: 40px;
-}
-.text-2{
-    padding: 20px;
-
-}
-.button-3{
-    padding: 20px;
-}
-.button-3 button {
-    box-shadow: 0px 0px 10px grey;
-}
-.t-2{
-    font-size: 20px;
-}
-.content-2 {
-    display: grid;
-    grid-template-columns: auto auto auto;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 10px;
 }
 
+.col1 {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    color: #2e3b35;
+    border-radius: 15px;
+    text-align: center;
+}
 
-
-
-
-
-
-
-/* Media Queries */
+/* Responsive Design */
 @media (max-width: 768px) {
-    .first, .navbar {
+    .first {
+        flex-direction: column;
+        text-align: center;
+    }
+    .navbar {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .paragraph {
+        padding: 20px;
+    }
+    .text {
+        font-size: 24px;
+    }
+    .button-2 button {
+        width: 120px;
+        height: 40px;
+    }
+    .second-container {
         flex-direction: column;
         align-items: center;
-    }
-    h2, .button {
-        padding: 20px;
     }
 }
